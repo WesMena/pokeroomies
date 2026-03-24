@@ -16,7 +16,7 @@ export function PokemonGrid({ pokemon, selectedName, onSelect }: PokemonGridProp
 
   return (
     <div
-      className="overflow-y-auto overflow-x-visible max-h-[560px] pr-1 pl-1"
+      className="overflow-y-auto overflow-x-visible max-h-[300px] pr-1 pl-1"
       style={{ scrollbarColor: '#FF0000 #11191e', scrollbarWidth: 'thin' }}
     >
       <div className="flex flex-wrap gap-2 justify-start pt-1">
