@@ -89,7 +89,14 @@ export function ResultRow({ result, rank, expanded, onToggle }: ResultRowProps) 
             {pokemon.name}
           </p>
           {pokemon.habitat && (
-            <span className="text-xs" style={{ color: habitatColor }}>
+            <span
+              className="inline-flex items-center text-xs font-bold px-2 py-0.5 rounded-full"
+              style={{
+                backgroundColor: habitatColor + '15',
+                color: habitatColor,
+                border: `1px solid ${habitatColor}55`,
+              }}
+            >
               {pokemon.habitat}
             </span>
           )}
