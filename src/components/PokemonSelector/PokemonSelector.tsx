@@ -23,7 +23,7 @@ export function PokemonSelector({
     : allPokemon
 
   return (
-    <section className="w-full max-w-4xl mx-auto px-4">
+    <section className="w-full">
       <h2 className="text-[#FFDE00] text-base font-bold mb-4 uppercase tracking-widest">
         Choose your Pokémon
       </h2>

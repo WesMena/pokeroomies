@@ -32,19 +32,25 @@ export default function App() {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pb-16">
-        <PokemonSelector
-          allPokemon={pokemon}
-          selectedPokemon={selected}
-          onSelect={setSelected}
-        />
+      <main className="pb-16 px-4 max-w-[1400px] mx-auto">
+        <div className="flex gap-8 items-start">
+          <div className="flex-none w-[720px]">
+            <PokemonSelector
+              allPokemon={pokemon}
+              selectedPokemon={selected}
+              onSelect={setSelected}
+            />
+          </div>
 
-        {selected && results.length > 0 && (
-          <CompatibilityResults
-            results={results}
-            selectedName={selected.name}
-          />
-        )}
+          <div className="flex-1 min-w-0">
+            {selected && results.length > 0 && (
+              <CompatibilityResults
+                results={results}
+                selectedName={selected.name}
+              />
+            )}
+          </div>
+        </div>
       </main>
     </div>
   )

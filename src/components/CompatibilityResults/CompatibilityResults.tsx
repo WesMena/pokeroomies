@@ -18,7 +18,7 @@ export function CompatibilityResults({
   }
 
   return (
-    <section className="w-full max-w-4xl mx-auto px-4 mt-10">
+    <section className="w-full">
       <h2 className="text-[#FFDE00] text-sm font-bold mb-1 uppercase tracking-widest">
         Best roommates for {selectedName}
       </h2>
