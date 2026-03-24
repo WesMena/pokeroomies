@@ -47,6 +47,7 @@ export default function App() {
               <CompatibilityResults
                 results={results}
                 selectedName={selected.name}
+                selectedSpriteUrl={selected.spriteUrl}
               />
             )}
           </div>

@@ -42,18 +42,6 @@ export function PokemonSelector({
         onSelect={onSelect}
       />
 
-      {selectedPokemon && (
-        <div className="mt-3 flex items-center gap-2 text-base">
-          <span className="text-gray-400">Selected:</span>
-          <span className="text-[#FF0000] font-bold">{selectedPokemon.name}</span>
-          {selectedPokemon.habitat && (
-            <span className="text-xs px-2 py-0.5 rounded"
-              style={{ backgroundColor: '#FFDE0022', color: '#FFDE00', border: '1px solid #FFDE0055' }}>
-              {selectedPokemon.habitat}
-            </span>
-          )}
-        </div>
-      )}
     </section>
   )
 }
