@@ -9,10 +9,10 @@ interface ResultRowProps {
   onToggle: () => void
 }
 
-const PODIUM: Record<number, { medal: string; color: string; bg: string; glow: string }> = {
-  1: { medal: '🥇', color: '#FFD700', bg: '#2a2200', glow: '#FFD70033' },
-  2: { medal: '🥈', color: '#C0C0C0', bg: '#1e1e1e', glow: '#C0C0C033' },
-  3: { medal: '🥉', color: '#CD7F32', bg: '#1e1408', glow: '#CD7F3233' },
+const PODIUM: Record<number, { color: string; bg: string; glow: string }> = {
+  1: { color: '#FFD700', bg: '#2a2200', glow: '#FFD70033' },
+  2: { color: '#C0C0C0', bg: '#1e1e1e', glow: '#C0C0C033' },
+  3: { color: '#CD7F32', bg: '#1e1408', glow: '#CD7F3233' },
 }
 
 function ScoreBadge({ score }: { score: number }) {
@@ -39,14 +39,22 @@ export function ResultRow({ result, rank, expanded, onToggle }: ResultRowProps) 
   const isDimmed = score < 0
   const podium = PODIUM[rank]
 
-  const borderColor = podium ? podium.color : habitatColor + '44'
   const bgColor = podium ? podium.bg : '#11191e'
   const boxShadow = podium ? `0 0 12px ${podium.glow}` : undefined
+  const borderLeft = podium ? `4px solid ${podium.color}` : `1px solid ${habitatColor}44`
+  const borderOther = podium ? `1px solid ${podium.color}44` : `1px solid ${habitatColor}44`
 
   return (
     <div
       className={`rounded-lg overflow-hidden transition-opacity duration-200 ${isDimmed ? 'opacity-50 hover:opacity-80' : ''}`}
-      style={{ border: `${podium ? '2px' : '1px'} solid ${borderColor}`, backgroundColor: bgColor, boxShadow }}
+      style={{
+        borderLeft,
+        borderTop: borderOther,
+        borderRight: borderOther,
+        borderBottom: borderOther,
+        backgroundColor: bgColor,
+        boxShadow,
+      }}
     >
       <button
         onClick={onToggle}
@@ -54,7 +62,7 @@ export function ResultRow({ result, rank, expanded, onToggle }: ResultRowProps) 
       >
         {/* Rank */}
         {podium ? (
-          <span className="text-base w-6 text-center flex-shrink-0">{podium.medal}</span>
+          <span className="text-xs w-6 text-center flex-shrink-0 font-bold" style={{ color: podium.color }}>#{rank}</span>
         ) : (
           <span className="text-gray-600 text-xs w-6 text-center flex-shrink-0">#{rank}</span>
         )}
