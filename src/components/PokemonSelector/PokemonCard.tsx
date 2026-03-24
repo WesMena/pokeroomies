@@ -13,7 +13,7 @@ export function PokemonCard({ pokemon, selected, onClick }: PokemonCardProps) {
   return (
     <button
       onClick={() => onClick(pokemon)}
-      className="flex flex-col items-center gap-1 p-2 rounded-lg transition-all duration-150 hover:scale-105 focus:outline-none w-[80px]"
+      className="flex flex-col items-center gap-1 p-3 rounded-lg transition-all duration-150 hover:scale-105 focus:outline-none w-[160px]"
       style={{
         border: `2px solid ${selected ? '#FFFFFF' : habitatColor}`,
         backgroundColor: selected ? '#1a2535' : '#11191e',
@@ -25,19 +25,19 @@ export function PokemonCard({ pokemon, selected, onClick }: PokemonCardProps) {
         <img
           src={pokemon.spriteUrl}
           alt={pokemon.name}
-          className="w-12 h-12 object-contain pixelated"
+          className="w-24 h-24 object-contain pixelated"
           style={{ imageRendering: 'pixelated' }}
           loading="lazy"
         />
       ) : (
         <div
-          className="w-12 h-12 rounded-full flex items-center justify-center text-xs"
+          className="w-24 h-24 rounded-full flex items-center justify-center text-xs"
           style={{ backgroundColor: habitatColor + '33', color: habitatColor }}
         >
           ?
         </div>
       )}
-      <span className="text-[8px] text-center leading-tight text-gray-300 w-full truncate">
+      <span className="text-xs text-center leading-tight text-gray-300 w-full truncate">
         {pokemon.name}
       </span>
     </button>
