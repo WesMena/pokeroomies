@@ -41,7 +41,7 @@ export function ResultRow({ result, rank, expanded, onToggle }: ResultRowProps) 
 
   const bgColor = podium ? podium.bg : '#11191e'
   const boxShadow = podium ? `0 0 12px ${podium.glow}` : undefined
-  const borderLeft = podium ? `4px solid ${podium.color}` : `1px solid ${habitatColor}44`
+  const borderLeft = podium ? `8px solid ${podium.color}` : `1px solid ${habitatColor}44`
   const borderOther = podium ? `1px solid ${podium.color}44` : `1px solid ${habitatColor}44`
 
   return (
