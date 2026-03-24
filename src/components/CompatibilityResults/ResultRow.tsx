@@ -83,8 +83,8 @@ export function ResultRow({ result, rank, expanded, onToggle }: ResultRowProps) 
         {/* Name + Habitat */}
         <div className="flex-1 min-w-0">
           <p
-            className={`font-medium truncate ${podium ? 'text-base' : 'text-sm text-white'}`}
-            style={{ color: podium ? podium.color : 'white' }}
+            className={`font-medium truncate ${podium ? 'text-base' : 'text-sm'} text-white`}
+            style={{}}
           >
             {pokemon.name}
           </p>
