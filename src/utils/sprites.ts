@@ -22,7 +22,7 @@ export async function fetchSpriteMap(
   pokemonNames: string[]
 ): Promise<Record<string, string>> {
   const response = await fetch(
-    'https://pokeapi.co/api/v2/pokemon?limit=500&offset=0'
+    'https://pokeapi.co/api/v2/pokemon?limit=1500&offset=0'
   )
   if (!response.ok) throw new Error('Failed to fetch Pokémon list from PokeAPI')
 
