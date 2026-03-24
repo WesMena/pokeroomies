@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import type { Pokemon } from '../types/pokemon'
 import { fetchSpriteMap } from '../utils/sprites'
 
-interface UsePokemonDataResult {
+export interface UsePokemonDataResult {
   pokemon: Pokemon[]
   loading: boolean
   error: string | null
