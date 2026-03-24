@@ -1,0 +1,105 @@
+<h2>Pokémon Selector Design</h2>
+<p class="subtitle">Search bar + browse grid — which approach feels right?</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#1a1a2e;padding:14px;border-radius:6px;min-height:200px;display:flex;flex-direction:column;gap:8px;font-family:monospace;font-size:11px;">
+      <!-- Search bar with dropdown suggestions -->
+      <div style="position:relative;">
+        <div style="background:#2a2a3e;border:2px solid #3B4CCA;border-radius:6px;padding:7px 10px;display:flex;align-items:center;gap:6px;">
+          <span style="color:#FFDE00;">🔍</span>
+          <span style="color:#888;font-size:10px;">Search Pokémon... (e.g. "Bulbasaur")</span>
+        </div>
+        <!-- dropdown suggestions -->
+        <div style="background:#2a2a3e;border:1px solid #3B4CCA;border-radius:0 0 6px 6px;overflow:hidden;">
+          <div style="padding:5px 10px;color:#eee;font-size:10px;border-bottom:1px solid #3B4CCA22;display:flex;align-items:center;gap:6px;"><span style="background:#3B4CCA;border-radius:3px;width:20px;height:20px;display:inline-block;"></span>Bulbasaur <span style="color:#B3A125;font-size:9px;margin-left:auto;">Bright</span></div>
+          <div style="padding:5px 10px;color:#eee;font-size:10px;border-bottom:1px solid #3B4CCA22;display:flex;align-items:center;gap:6px;background:#3B4CCA22;"><span style="background:#CC0000;border-radius:3px;width:20px;height:20px;display:inline-block;"></span>Blastoise <span style="color:#B3A125;font-size:9px;margin-left:auto;">Humid</span></div>
+          <div style="padding:5px 10px;color:#888;font-size:10px;display:flex;align-items:center;gap:6px;"><span style="background:#3B4CCA55;border-radius:3px;width:20px;height:20px;display:inline-block;"></span>Bellsprout <span style="color:#B3A125;font-size:9px;margin-left:auto;">Humid</span></div>
+        </div>
+      </div>
+      <div style="color:#666;font-size:9px;text-align:center;">— or browse all —</div>
+      <!-- compact grid -->
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:3px;overflow:hidden;max-height:70px;">
+        <div style="background:#3B4CCA;border-radius:3px;aspect-ratio:1;opacity:0.9;"></div>
+        <div style="background:#3B4CCA;border-radius:3px;aspect-ratio:1;opacity:0.7;"></div>
+        <div style="background:#3B4CCA;border-radius:3px;aspect-ratio:1;opacity:0.8;"></div>
+        <div style="background:#CC0000;border-radius:3px;aspect-ratio:1;opacity:0.8;"></div>
+        <div style="background:#CC0000;border-radius:3px;aspect-ratio:1;opacity:0.6;"></div>
+        <div style="background:#3B4CCA;border-radius:3px;aspect-ratio:1;opacity:0.7;"></div>
+        <div style="background:#3B4CCA;border-radius:3px;aspect-ratio:1;opacity:0.5;"></div>
+        <div style="background:#B3A125;border-radius:3px;aspect-ratio:1;opacity:0.7;"></div>
+        <div style="background:#3B4CCA;border-radius:3px;aspect-ratio:1;opacity:0.8;"></div>
+        <div style="background:#CC0000;border-radius:3px;aspect-ratio:1;opacity:0.7;"></div>
+        <div style="background:#3B4CCA;border-radius:3px;aspect-ratio:1;opacity:0.6;"></div>
+        <div style="background:#B3A125;border-radius:3px;aspect-ratio:1;opacity:0.9;"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Search + Collapsible Grid</h3>
+      <p>Search is the hero. Grid sits below — always visible but compact. Search suggestions show Pokémon names + habitat.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#1a1a2e;padding:14px;border-radius:6px;min-height:200px;display:flex;flex-direction:column;gap:8px;font-family:monospace;font-size:11px;">
+      <!-- Tabs: Search | Browse -->
+      <div style="display:flex;border-bottom:2px solid #3B4CCA;margin-bottom:4px;">
+        <div style="padding:5px 12px;background:#3B4CCA;color:#FFDE00;font-weight:bold;font-size:10px;border-radius:4px 4px 0 0;">🔍 Search</div>
+        <div style="padding:5px 12px;color:#888;font-size:10px;border-radius:4px 4px 0 0;">📋 Browse All</div>
+      </div>
+      <!-- Search panel -->
+      <div style="background:#2a2a3e;border:2px solid #3B4CCA;border-radius:6px;padding:7px 10px;display:flex;align-items:center;gap:6px;">
+        <span style="color:#FFDE00;">🔍</span>
+        <span style="color:#FFDE00;font-size:10px;">Char</span>
+        <span style="color:#3B4CCA;font-size:10px;">|</span>
+      </div>
+      <div style="background:#2a2a3e;border:1px solid #3B4CCA55;border-radius:6px;overflow:hidden;">
+        <div style="padding:5px 10px;background:#FFDE0022;border-left:3px solid #FFDE00;color:#eee;font-size:10px;">Charmander — Warm 🔥</div>
+        <div style="padding:5px 10px;color:#ccc;font-size:10px;border-top:1px solid #3B4CCA22;">Charmeleon — Warm 🔥</div>
+        <div style="padding:5px 10px;color:#ccc;font-size:10px;border-top:1px solid #3B4CCA22;">Charizard — Warm 🔥</div>
+      </div>
+      <div style="color:#888;font-size:9px;text-align:center;font-style:italic;">(Browse All tab shows full scrollable grid)</div>
+    </div>
+    <div class="card-body">
+      <h3>B — Tabbed: Search | Browse</h3>
+      <p>Two separate tabs. Clean separation. Browse tab reveals the full grid. More deliberate UX.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#1a1a2e;padding:14px;border-radius:6px;min-height:200px;display:flex;flex-direction:column;gap:8px;font-family:monospace;font-size:11px;">
+      <!-- Single bar that filters the grid live -->
+      <div style="background:#2a2a3e;border:2px solid #FFDE00;border-radius:6px;padding:7px 10px;display:flex;align-items:center;gap:6px;">
+        <span style="color:#FFDE00;">🔍</span>
+        <span style="color:#FFDE00;font-size:10px;">Bul</span>
+        <span style="color:#FFDE00;font-size:10px;">|</span>
+        <span style="color:#888;font-size:9px;margin-left:auto;">3 results</span>
+      </div>
+      <!-- filtered grid -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;">
+        <div style="background:#2a2a3e;border:1px solid #FFDE00;border-radius:4px;padding:6px;text-align:center;">
+          <div style="background:#3B4CCA;border-radius:3px;height:32px;margin-bottom:4px;"></div>
+          <div style="color:#eee;font-size:8px;">Bulbasaur</div>
+          <div style="color:#B3A125;font-size:7px;">Bright</div>
+        </div>
+        <div style="background:#2a2a3e;border:1px solid #3B4CCA33;border-radius:4px;padding:6px;text-align:center;">
+          <div style="background:#3B4CCA;border-radius:3px;height:32px;margin-bottom:4px;opacity:0.7;"></div>
+          <div style="color:#ccc;font-size:8px;">Ivysaur</div>
+          <div style="color:#B3A125;font-size:7px;">Bright</div>
+        </div>
+        <div style="background:#2a2a3e;border:1px solid #3B4CCA33;border-radius:4px;padding:6px;text-align:center;">
+          <div style="background:#3B4CCA;border-radius:3px;height:32px;margin-bottom:4px;opacity:0.7;"></div>
+          <div style="color:#ccc;font-size:8px;">Venusaur</div>
+          <div style="color:#B3A125;font-size:7px;">Bright</div>
+        </div>
+      </div>
+      <div style="color:#666;font-size:9px;text-align:center;">search filters the grid live — no separate list</div>
+    </div>
+    <div class="card-body">
+      <h3>C — Search Filters the Grid Live</h3>
+      <p>One unified view. Typing narrows the grid in real time. Empty search = all Pokémon. Simple and tactile.</p>
+    </div>
+  </div>
+
+</div>

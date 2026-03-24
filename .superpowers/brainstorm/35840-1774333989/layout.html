@@ -1,0 +1,87 @@
+<h2>Overall Page Layout</h2>
+<p class="subtitle">How should the Pokéroomies app be structured?</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#1a1a2e;padding:16px;border-radius:6px;min-height:180px;display:flex;flex-direction:column;gap:8px;font-family:monospace;font-size:11px;">
+      <div style="background:#3B4CCA;color:#FFDE00;padding:8px 12px;border-radius:4px;text-align:center;font-weight:bold;letter-spacing:1px;">POKÉROOMIES</div>
+      <div style="background:#2a2a3e;border-radius:4px;padding:8px;flex:1;display:flex;flex-direction:column;gap:4px;">
+        <div style="color:#FFDE00;font-size:10px;margin-bottom:4px;">▼ Select your Pokémon</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;">
+          <div style="background:#3B4CCA;border-radius:3px;height:28px;opacity:0.8;"></div>
+          <div style="background:#CC0000;border-radius:3px;height:28px;opacity:0.6;"></div>
+          <div style="background:#3B4CCA;border-radius:3px;height:28px;opacity:0.6;"></div>
+          <div style="background:#3B4CCA;border-radius:3px;height:28px;opacity:0.8;"></div>
+        </div>
+        <div style="background:#FFDE00;color:#1a1a2e;padding:4px 8px;border-radius:3px;text-align:center;font-weight:bold;font-size:10px;cursor:pointer;">FIND ROOMIES ▶</div>
+      </div>
+      <div style="background:#2a2a3e;border-radius:4px;padding:8px;flex:1;">
+        <div style="color:#B3A125;font-size:10px;margin-bottom:4px;">🏆 Best Matches</div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div style="background:#3B4CCA22;border-left:3px solid #FFDE00;padding:3px 6px;border-radius:0 3px 3px 0;color:#eee;font-size:10px;">1. Squirtle — +35pts</div>
+          <div style="background:#3B4CCA22;border-left:3px solid #B3A125;padding:3px 6px;border-radius:0 3px 3px 0;color:#eee;font-size:10px;">2. Psyduck — +25pts</div>
+          <div style="background:#3B4CCA22;border-left:3px solid #CC0000;padding:3px 6px;border-radius:0 3px 3px 0;color:#eee;font-size:10px;">3. Koffing — -10pts</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Single Page, Top→Bottom</h3>
+      <p>Selector at top, results below. One continuous scroll. Simple and focused.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#1a1a2e;padding:16px;border-radius:6px;min-height:180px;display:flex;flex-direction:column;gap:8px;font-family:monospace;font-size:11px;">
+      <div style="background:#3B4CCA;color:#FFDE00;padding:8px 12px;border-radius:4px;text-align:center;font-weight:bold;letter-spacing:1px;">POKÉROOMIES</div>
+      <div style="display:flex;gap:8px;flex:1;">
+        <div style="background:#2a2a3e;border-radius:4px;padding:8px;flex:1;display:flex;flex-direction:column;gap:4px;">
+          <div style="color:#FFDE00;font-size:10px;margin-bottom:4px;">🔍 Select</div>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:3px;">
+            <div style="background:#3B4CCA;border-radius:3px;height:22px;opacity:0.8;"></div>
+            <div style="background:#CC0000;border-radius:3px;height:22px;opacity:0.6;"></div>
+            <div style="background:#3B4CCA;border-radius:3px;height:22px;opacity:0.6;"></div>
+            <div style="background:#3B4CCA;border-radius:3px;height:22px;opacity:0.8;"></div>
+            <div style="background:#CC0000;border-radius:3px;height:22px;opacity:0.5;"></div>
+            <div style="background:#3B4CCA;border-radius:3px;height:22px;opacity:0.7;"></div>
+          </div>
+          <div style="background:#FFDE00;color:#1a1a2e;padding:3px 6px;border-radius:3px;text-align:center;font-weight:bold;font-size:9px;">GO ▶</div>
+        </div>
+        <div style="background:#2a2a3e;border-radius:4px;padding:8px;flex:1;display:flex;flex-direction:column;gap:3px;">
+          <div style="color:#B3A125;font-size:10px;margin-bottom:4px;">🏆 Results</div>
+          <div style="background:#FFDE0033;border-left:3px solid #FFDE00;padding:2px 5px;color:#eee;font-size:9px;border-radius:0 2px 2px 0;">1. Squirtle +35</div>
+          <div style="background:#3B4CCA22;border-left:3px solid #B3A125;padding:2px 5px;color:#eee;font-size:9px;border-radius:0 2px 2px 0;">2. Psyduck +25</div>
+          <div style="background:#3B4CCA22;border-left:3px solid #CC000066;padding:2px 5px;color:#eee;font-size:9px;border-radius:0 2px 2px 0;">3. Koffing -10</div>
+          <div style="background:#3B4CCA22;border-left:3px solid #CC000066;padding:2px 5px;color:#eee;font-size:9px;border-radius:0 2px 2px 0;">4. Weezing -15</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Side by Side (Two Columns)</h3>
+      <p>Pokémon grid on the left, ranked results on the right. Both visible simultaneously.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#1a1a2e;padding:16px;border-radius:6px;min-height:180px;display:flex;flex-direction:column;gap:8px;font-family:monospace;font-size:11px;">
+      <div style="background:#3B4CCA;color:#FFDE00;padding:8px 12px;border-radius:4px;text-align:center;font-weight:bold;letter-spacing:1px;">POKÉROOMIES</div>
+      <div style="background:#2a2a3e;border-radius:4px;padding:10px;flex:1;display:flex;flex-direction:column;gap:6px;align-items:center;justify-content:center;">
+        <div style="color:#FFDE00;font-size:11px;font-weight:bold;">Who are you?</div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:3px;width:100%;">
+          <div style="background:#3B4CCA;border-radius:3px;height:24px;opacity:0.8;"></div>
+          <div style="background:#CC0000;border-radius:3px;height:24px;opacity:0.6;"></div>
+          <div style="background:#3B4CCA;border-radius:3px;height:24px;opacity:0.6;"></div>
+          <div style="background:#3B4CCA;border-radius:3px;height:24px;opacity:0.8;"></div>
+          <div style="background:#CC0000;border-radius:3px;height:24px;opacity:0.5;"></div>
+        </div>
+        <div style="background:#FFDE00;color:#1a1a2e;padding:4px 14px;border-radius:3px;font-weight:bold;font-size:10px;cursor:pointer;">▶ FIND MY ROOMIES</div>
+      </div>
+      <div style="color:#666;font-size:9px;text-align:center;font-style:italic;">→ transitions to results screen</div>
+    </div>
+    <div class="card-body">
+      <h3>C — Two-Screen Flow</h3>
+      <p>Step 1: pick your Pokémon. Step 2: animated transition to full results page. Most "app-like" feel.</p>
+    </div>
+  </div>
+
+</div>
