@@ -15,9 +15,9 @@ export function PokemonCard({ pokemon, selected, onClick }: PokemonCardProps) {
       onClick={() => onClick(pokemon)}
       className="flex flex-col items-center gap-1 p-2 rounded-lg transition-all duration-150 hover:scale-105 focus:outline-none w-[80px]"
       style={{
-        border: `2px solid ${selected ? '#FF0000' : habitatColor}`,
-        backgroundColor: selected ? '#1a0000' : '#1a1a1a',
-        boxShadow: selected ? `0 0 10px #FF0000` : `0 0 4px ${habitatColor}44`,
+        border: `2px solid ${selected ? '#FFFFFF' : habitatColor}`,
+        backgroundColor: selected ? '#1a1a2e' : '#1a1a1a',
+        boxShadow: selected ? `0 0 10px #FFFFFF88` : `0 0 4px ${habitatColor}44`,
       }}
       title={`${pokemon.name} — ${pokemon.habitat ?? 'No habitat'}`}
     >

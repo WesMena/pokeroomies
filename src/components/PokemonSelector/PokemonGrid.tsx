@@ -16,10 +16,10 @@ export function PokemonGrid({ pokemon, selectedName, onSelect }: PokemonGridProp
 
   return (
     <div
-      className="overflow-y-auto max-h-[340px] pr-1"
+      className="overflow-y-auto overflow-x-visible max-h-[340px] pr-1 pl-1"
       style={{ scrollbarColor: '#FF0000 #1a1a1a', scrollbarWidth: 'thin' }}
     >
-      <div className="flex flex-wrap gap-2 justify-start">
+      <div className="flex flex-wrap gap-2 justify-start pt-1">
         {pokemon.map(p => (
           <PokemonCard
             key={p.name}

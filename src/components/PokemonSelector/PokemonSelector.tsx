@@ -24,7 +24,7 @@ export function PokemonSelector({
 
   return (
     <section className="w-full max-w-4xl mx-auto px-4">
-      <h2 className="text-[#FFDE00] text-sm font-bold mb-4 uppercase tracking-widest">
+      <h2 className="text-[#FFDE00] text-base font-bold mb-4 uppercase tracking-widest">
         Choose your Pokémon
       </h2>
 
@@ -43,7 +43,7 @@ export function PokemonSelector({
       />
 
       {selectedPokemon && (
-        <div className="mt-3 flex items-center gap-2 text-sm">
+        <div className="mt-3 flex items-center gap-2 text-base">
           <span className="text-gray-400">Selected:</span>
           <span className="text-[#FF0000] font-bold">{selectedPokemon.name}</span>
           {selectedPokemon.habitat && (
