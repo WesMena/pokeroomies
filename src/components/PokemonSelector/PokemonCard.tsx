@@ -16,7 +16,7 @@ export function PokemonCard({ pokemon, selected, onClick }: PokemonCardProps) {
       className="flex flex-col items-center gap-1 p-2 rounded-lg transition-all duration-150 hover:scale-105 focus:outline-none w-[80px]"
       style={{
         border: `2px solid ${selected ? '#FFFFFF' : habitatColor}`,
-        backgroundColor: selected ? '#1a1a2e' : '#1a1a1a',
+        backgroundColor: selected ? '#1a2535' : '#11191e',
         boxShadow: selected ? `0 0 10px #FFFFFF88` : `0 0 4px ${habitatColor}44`,
       }}
       title={`${pokemon.name} — ${pokemon.habitat ?? 'No habitat'}`}

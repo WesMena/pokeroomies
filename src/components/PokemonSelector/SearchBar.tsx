@@ -50,7 +50,7 @@ export function SearchBar({ allPokemon, onSelect, onSearchChange }: SearchBarPro
 
   return (
     <div ref={wrapperRef} className="relative w-full max-w-md">
-      <div className="flex items-center gap-2 bg-[#1a1a1a] border-2 border-[#3B4CCA] rounded-lg px-3 py-2 focus-within:border-[#FF0000] transition-colors">
+      <div className="flex items-center gap-2 bg-[#11191e] border-2 border-[#3B4CCA] rounded-lg px-3 py-2 focus-within:border-[#FF0000] transition-colors">
         <span className="text-[#FFDE00]">🔍</span>
         <input
           type="text"
@@ -68,12 +68,12 @@ export function SearchBar({ allPokemon, onSelect, onSearchChange }: SearchBarPro
       </div>
 
       {showSuggestions && suggestions.length > 0 && (
-        <ul className="absolute z-50 w-full mt-1 bg-[#1a1a1a] border border-[#3B4CCA] rounded-lg overflow-hidden shadow-xl">
+        <ul className="absolute z-50 w-full mt-1 bg-[#11191e] border border-[#3B4CCA] rounded-lg overflow-hidden shadow-xl">
           {suggestions.map(pokemon => (
             <li key={pokemon.name}>
               <button
                 onMouseDown={() => handleSelect(pokemon)}
-                className="w-full flex items-center gap-3 px-3 py-2 hover:bg-[#2a1a1a] hover:border-l-2 hover:border-[#FF0000] transition-colors text-left"
+                className="w-full flex items-center gap-3 px-3 py-2 hover:bg-[#1a2535] hover:border-l-2 hover:border-[#FF0000] transition-colors text-left"
               >
                 {pokemon.spriteUrl && (
                   <img

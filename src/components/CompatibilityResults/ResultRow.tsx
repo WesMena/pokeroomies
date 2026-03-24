@@ -35,7 +35,7 @@ export function ResultRow({ result, rank, expanded, onToggle }: ResultRowProps) 
   return (
     <div
       className={`rounded-lg overflow-hidden transition-opacity duration-200 ${isDimmed ? 'opacity-50 hover:opacity-80' : ''}`}
-      style={{ border: `1px solid ${habitatColor}44`, backgroundColor: '#141414' }}
+      style={{ border: `1px solid ${habitatColor}44`, backgroundColor: '#11191e' }}
     >
       <button
         onClick={onToggle}
