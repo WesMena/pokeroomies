@@ -24,7 +24,7 @@
     ]
   },
   {
-    "name": "Venasaur",
+    "name": "Venusaur",
     "habitat": "Bright",
     "lots_of": [
       "Sour",
@@ -3180,7 +3180,7 @@
     ]
   },
   {
-    "name": "Floragto",
+    "name": "Floragato",
     "habitat": "Bright",
     "lots_of": [
       "Sour",
@@ -3288,7 +3288,7 @@
     ]
   },
   {
-    "name": "Ramparados",
+    "name": "Rampardos",
     "habitat": "Dry",
     "lots_of": [
       "Dry",
@@ -3480,7 +3480,7 @@
     ]
   },
   {
-    "name": "Kyorgre",
+    "name": "Kyogre",
     "habitat": "Humid",
     "lots_of": [
       "Dry",
