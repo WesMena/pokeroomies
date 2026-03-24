@@ -1,73 +1,73 @@
-# React + TypeScript + Vite
+# Pokéroomies
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A companion tool for **Pokémon Pokopia** players to find their perfect Pokémon roommate.
 
-Currently, two official plugins are available:
+Select your Pokémon and instantly see all 303 housemates ranked by compatibility — based on shared habitat and personality traits pulled straight from the Pokopia housemate roster.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## What it does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Browse & search** the full Pokopia housemate roster (303 Pokémon)
+- **Select your Pokémon** to see how compatible every other housemate is with yours
+- **Ranked results** with a full score breakdown for each candidate
+- **Top 3 podium** — gold, silver, and bronze highlights for your best matches
+- Sprites fetched live from PokéAPI
 
-## Expanding the ESLint configuration
+## Scoring system
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Compatibility is calculated from your selected Pokémon's perspective:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Factor | Points |
+|---|---|
+| Same habitat | +20 |
+| Incompatible habitat (Bright/Dark, Warm/Cool, Humid/Dry) | −20 |
+| Each shared trait | +5 |
+| Each clashing trait pair (Cleanliness/Garbage, Noisy/Watching, Hard/Soft, Spooky/Healing) | −5 |
+| No habitat (either side) | 0 |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tech stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- [React 18](https://react.dev/) + [TypeScript 5](https://www.typescriptlang.org/)
+- [Vite 5](https://vitejs.dev/) — dev server & build
+- [Tailwind CSS v3](https://tailwindcss.com/) — utility-first styling with dynamic inline styles
+- [PokéAPI](https://pokeapi.co/) — sprite resolution at startup
+- [Vitest](https://vitest.dev/) + [Testing Library](https://testing-library.com/) — unit tests for the compatibility engine
+
+## Getting started
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm test       # run unit tests
+npm run build  # production build
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project structure
+
+```
+src/
+├── components/
+│   ├── CompatibilityResults/   # Ranked results list with breakdown pills
+│   ├── PokemonSelector/        # Search bar + scrollable card grid
+│   └── Header.tsx
+├── data/
+│   ├── compatibilityRules.ts   # Scoring constants & clash pairs
+│   └── nameOverrides.ts        # JSON name → PokéAPI slug mappings
+├── engine/
+│   └── compatibility.ts        # Pure scoring function (fully tested)
+├── hooks/
+│   ├── useCompatibility.ts     # Memoized ranked results
+│   └── usePokemonData.ts       # Data fetch + sprite resolution
+├── types/
+│   └── pokemon.ts
+└── utils/
+    └── sprites.ts              # Name normalisation & habitat colours
+public/
+└── pokemon.json                # 303 Pokopia housemates
 ```
