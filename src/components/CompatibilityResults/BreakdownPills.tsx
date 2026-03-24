@@ -23,7 +23,7 @@ export function BreakdownPills({ breakdown }: BreakdownPillsProps) {
         return (
           <span
             key={i}
-            className="inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full"
+            className="inline-flex items-center gap-1 text-xs font-bold px-2 py-1 rounded-full"
             style={{
               backgroundColor: style.bg,
               color: style.text,
